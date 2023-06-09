@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Comment, type: :model do
   let!(:user) { User.create(name: 'Abdur Rahman', bio: 'Farmer', post_counter: 0) }
   let!(:post) do
-    Post.create(title: 'My Post Title', text: 'My post description.', author: user, likes_counter: 0, comments_counter: 0)
+    Post.create(title: 'My Post Title', text: 'My post description.', author: user, likes_counter: 0,
+                comments_counter: 0)
   end
   subject { described_class.create(text: 'My comment', post:, author: user) }
 

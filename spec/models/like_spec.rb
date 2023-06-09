@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Like, type: :model do
   let!(:user) { User.create(name: 'Al-Imran', bio: 'Data Scientist', post_counter: 0) }
   let!(:post) do
-    Post.create(title: 'Lorem ipsum', text: 'This is a dummy post description.', author: user, likes_counter: 0, comments_counter: 0)
+    Post.create(title: 'Lorem ipsum', text: 'This is a dummy post description.', author: user, likes_counter: 0,
+                comments_counter: 0)
   end
   subject { described_class.create(post:, author: user) }
 
