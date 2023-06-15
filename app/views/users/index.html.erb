@@ -1,4 +1,5 @@
 <section>
+<%= link_to "+ New Post", new_user_post_path(@current), class: "new-post-btn" %>
 <% @users.each do |user| %>
     <%= render "shared/user_card", user: user %>
 <% end %>
