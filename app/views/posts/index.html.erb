@@ -1,6 +1,6 @@
 <section>
     <%= render "shared/user_card", user: @user %>
-    
+    <h2 class="user_title">List of Posts for User #<%= @user.name%></h2>
     <% if @posts.empty? %>
         <p>No post found</p>
     <% end %>

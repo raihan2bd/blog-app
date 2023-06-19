@@ -17,7 +17,7 @@ RSpec.describe 'Posts', type: :request do
 
     it 'should list all posts for correct user' do
       get user_posts_path(user_id: user.id)
-      expect(response.body).to include("List of Posts for User ##{user.id}")
+      expect(response.body).to include("List of Posts for User ##{user.name}")
     end
   end
 
@@ -34,7 +34,7 @@ RSpec.describe 'Posts', type: :request do
 
     it 'should show correct post' do
       get user_post_path(user_id: user.id, id: post.id)
-      expect(response.body).to include("Post ##{post.id}")
+      expect(response.body).to include("#{post.title}")
     end
   end
 end
