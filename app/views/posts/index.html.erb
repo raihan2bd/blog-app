@@ -1,10 +1,10 @@
 <section>
     <%= render "shared/user_card", user: @user %>
-    
-    <% if @user.posts.empty? %>
+    <h2 class="user_title">List of Posts for User #<%= @user.name%></h2>
+    <% if @posts.empty? %>
         <p>No post found</p>
     <% end %>
-    <% @user.posts.each do |post| %>
+    <% @posts.each do |post| %>
         <%= render "shared/post_card", post: post %>
         <%= render "shared/comment_box", comments: post.recent_comments %>
     <% end %>
