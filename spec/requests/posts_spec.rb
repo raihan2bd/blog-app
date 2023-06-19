@@ -34,7 +34,7 @@ RSpec.describe 'Posts', type: :request do
 
     it 'should show correct post' do
       get user_post_path(user_id: user.id, id: post.id)
-      expect(response.body).to include("#{post.title}")
+      expect(response.body).to include(post.title.to_s)
     end
   end
 end

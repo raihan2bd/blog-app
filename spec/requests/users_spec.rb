@@ -33,7 +33,7 @@ RSpec.describe 'Users', type: :request do
 
     it 'should show the correct user' do
       get user_url(user)
-      expect(response.body).to include("#{user.name}")
+      expect(response.body).to include(user.name.to_s)
     end
   end
 end
