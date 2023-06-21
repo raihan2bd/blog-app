@@ -1,7 +1,22 @@
+<div class="form_container">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, autofocus: true, autocomplete: "name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :photo %>
+    <%= f.text_field :photo, required: true, autofocus: true, autocomplete: "photo" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bio %>
+    <%= f.text_field :bio, required: true, autofocus: true, autocomplete: "bio" %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -27,3 +42,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

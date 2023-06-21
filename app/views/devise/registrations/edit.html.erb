@@ -1,7 +1,23 @@
+<div class="form_container">
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, autofocus: true, autocomplete: "name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :photo %>
+    <%= f.text_field :photo, required: true, autofocus: true, autocomplete: "photo" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bio %>
+    <%= f.text_field :bio, required: true, autofocus: true, autocomplete: "bio" %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -41,3 +57,4 @@
 <div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
 
 <%= link_to "Back", :back %>
+<div class="form_container">
