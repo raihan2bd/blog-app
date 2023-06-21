@@ -1,5 +1,7 @@
 <section>
+<% if @current%>
 <%= link_to "+ New Post", new_user_post_path(@current), class: "new-post-btn" %>
+<% end %>
 <h2 class="user_title">List of All Users</h2>
 <% @users.each do |user| %>
     <%= render "shared/user_card", user: user %>
