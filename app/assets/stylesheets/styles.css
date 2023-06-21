@@ -171,3 +171,28 @@ section {
 .comment-text {
   font-size: 0.8rem;
 }
+
+.form_container {
+  text-align: center;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.field input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.actions input[type='submit'] {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
