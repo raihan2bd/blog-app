@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments)
+    @current = current_user
   end
 
   def show
@@ -24,6 +25,13 @@ class PostsController < ApplicationController
       flash[:error] = 'Post upload failed! Please try again.'
       redirect_to new_user_post_url(current_user)
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect_to user_path(current_user)
   end
 
   private
